@@ -1,0 +1,17 @@
+<h1 align='center'>Infinite scroller Example</h1>
+<div class="search-results">
+    <div class="container" style="overflow: scroll; height: 600px;">
+        <div class="row">
+            <div *ngFor="let item of list;let i=index" class="col-sm-4">
+                <div style="margin-top: 10px;" class="card">
+                    <img class="card-img-top" width="300" height="300" [src]="item.download_url" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.id}}</h5>
+                        <a href="#" class="btn btn-primary">{{item.author}}</a>
+                        <button>remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

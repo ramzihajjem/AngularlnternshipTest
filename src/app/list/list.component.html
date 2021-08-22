@@ -1,0 +1,27 @@
+<h1 align='center'>Infinite scroller Example</h1>
+<div class="search-results">
+    <div class="container" style="overflow: scroll; height: 600px;" (scroll)="onScroll($event)">
+
+
+        <mat-grid-list cols="3" rowHeight="2:1">
+
+            <div class="row">
+                <div *ngFor="let item of items;let i=index" class="col-sm-4">
+                    <mat-grid-tile>
+
+                        <div style="margin-top: 10px;" class="card">
+                            <img class="card-img-top" width="300" height="300" [src]="item.download_url" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{item.id}}</h5>
+                                <a href="#" class="btn btn-primary">{{item.author}}</a>
+                                <button *ngIf="!checkfav(item.id)" (click)="addFav(item.id)">add</button>
+                                <button *ngIf="checkfav(item.id)" (click)="removefav(item.id)">remove</button>
+                            </div>
+                        </div>
+                    </mat-grid-tile>
+                </div>
+            </div>
+        </mat-grid-list>
+
+    </div>
+</div>
