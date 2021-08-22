@@ -1,3 +1,4 @@
+<input type="text" placeholder="Search" ng-model="query" ng-focus="focus=true">
 <div class="search-results">
     <div class="container" style="overflow: scroll; height: 600px;" (scroll)="onScroll($event)">
 
@@ -5,7 +6,7 @@
         <mat-grid-list cols="3">
 
             <div class="row">
-                <div *ngFor="let item of items">
+                <div *ngFor="let item of items ">
                     <mat-grid-tile class="gridStyle">
                         <mat-card class="example-card" (mouseenter)="showElement=!showElement" (mouseleave)="showElement=!showElement">
                             <mat-card-header>

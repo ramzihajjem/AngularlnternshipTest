@@ -24,7 +24,7 @@ export class ListComponent implements OnInit {
   constructor(private dataservice : DataService) {
   }
 
-  
+
 
 
   addItems(index: any, sum: Number) {  
