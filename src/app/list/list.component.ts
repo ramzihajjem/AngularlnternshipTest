@@ -1,7 +1,5 @@
 import { Component, OnInit, HostListener  } from '@angular/core';
 import { DataService } from '../data.service';
-import {MatGridListModule} from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
 
 
 @Component({

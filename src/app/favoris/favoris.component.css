@@ -1,0 +1,29 @@
+.example-card {
+    max-width: 400px;
+    border: #0081a7 solid 8px;
+}
+
+.gridStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.btnStyle {
+    width: 100%;
+    background-color: #0081a7;
+    border: 0;
+}
+
+.authorStyle {
+    color: #0081a7;
+    font-size: 28px;
+    font-weight: 200;
+}
+
+.imgStyle {
+    width: 200px;
+    height: 200px;
+}
