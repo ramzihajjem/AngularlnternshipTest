@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener  } from '@angular/core';
 import { DataService } from '../data.service';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 
 
 @Component({
@@ -10,6 +11,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 })
 
 export class ListComponent implements OnInit {
+  showElement: boolean = true;
+
   items: any = [];
   sum = 12;  
   curScrollPos = 0;
@@ -22,6 +25,9 @@ export class ListComponent implements OnInit {
   n: number = 0
   constructor(private dataservice : DataService) {
   }
+
+  
+
 
   addItems(index: any, sum: Number) {  
     for (let i = index; i < sum; i++) {
@@ -72,5 +78,8 @@ export class ListComponent implements OnInit {
       this.onScrollDown()
     }
   }
+
+
+  
 
 }

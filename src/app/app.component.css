@@ -1,5 +1,43 @@
 .AppBar {
     height: 40px;
-    background-color: rgb(212, 0, 255);
+    background-color: #0081a7;
     width: 100%;
+}
+
+.body {
+    margin-top: 5%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    margin-right: 3.5rem;
+    color: #fff;
+}
+
+.navStyle {
+    height: 50px;
+    display: flex;
+    background-color: #117488;
+    padding-left: 1rem;
+    font-weight: 600;
+    align-items: center;
+}
+
+.navItems {
+    margin: 5px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
 }

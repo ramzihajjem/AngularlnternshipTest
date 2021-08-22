@@ -1,23 +1,29 @@
-<h1 align='center'>Infinite scroller Example</h1>
 <div class="search-results">
     <div class="container" style="overflow: scroll; height: 600px;" (scroll)="onScroll($event)">
 
 
-        <mat-grid-list cols="3" rowHeight="2:1">
+        <mat-grid-list cols="3">
 
             <div class="row">
-                <div *ngFor="let item of items;let i=index" class="col-sm-4">
-                    <mat-grid-tile>
+                <div *ngFor="let item of items">
+                    <mat-grid-tile class="gridStyle">
+                        <mat-card class="example-card" (mouseenter)="showElement=!showElement" (mouseleave)="showElement=!showElement">
+                            <mat-card-header>
+                                <div class="mat-card-header-text " style="margin: -16px; "></div>
+                                <button class="btnStyle " *ngIf="checkfav(item.id)  " (click)="removefav(item.id) ">In favorites</button>
+                                <button class="btnStyle " *ngIf="!checkfav(item.id) " (click)="addFav(item.id) ">Add To favorites</button>
+                            </mat-card-header>
 
-                        <div style="margin-top: 10px;" class="card">
-                            <img class="card-img-top" width="300" height="300" [src]="item.download_url" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">{{item.id}}</h5>
-                                <a href="#" class="btn btn-primary">{{item.author}}</a>
-                                <button *ngIf="!checkfav(item.id)" (click)="addFav(item.id)">add</button>
-                                <button *ngIf="checkfav(item.id)" (click)="removefav(item.id)">remove</button>
-                            </div>
-                        </div>
+                            <h2 class="authorStyle ">{{item.author}}</h2>
+
+                            <img mat-card-image class="imgStyle " [src]="item.download_url " alt="Photo of a Shiba Inu ">
+                            <mat-card-content>
+                                <p>
+                                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+                                </p>
+                            </mat-card-content>
+                        </mat-card>
+
                     </mat-grid-tile>
                 </div>
             </div>

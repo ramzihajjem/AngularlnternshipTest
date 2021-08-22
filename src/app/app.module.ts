@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,7 +28,10 @@ import { ScrollDirective } from './scroll.directive'; // CLI imports router
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule,
+    MDBBootstrapModule.forRoot()
+
   ],
   exports:[RouterModule],
   providers: [],
