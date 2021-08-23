@@ -21,6 +21,7 @@ export class ListComponent implements OnInit {
   fav: Array<any> = []
   list: Array<any> = []
   n: number = 0
+  search: any = ''
   constructor(private dataservice : DataService) {
   }
 
