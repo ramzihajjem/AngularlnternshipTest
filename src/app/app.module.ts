@@ -11,8 +11,6 @@ import { FavorisComponent } from './favoris/favoris.component';
 import { ListComponent } from './list/list.component';
 import { routes } from './routes';
 import { Routes, RouterModule } from '@angular/router';
-import { HighlightDirective } from './highlight.directive';
-import { ScrollDirective } from './scroll.directive';
 import { FilterPipe } from './filter.pipe'; // CLI imports router
 
 @NgModule({
@@ -20,8 +18,6 @@ import { FilterPipe } from './filter.pipe'; // CLI imports router
     AppComponent,
     FavorisComponent,
     ListComponent,
-    HighlightDirective,
-    ScrollDirective,
     FilterPipe
   ],
   imports: [
