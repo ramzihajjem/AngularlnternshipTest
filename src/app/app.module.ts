@@ -13,6 +13,7 @@ import { routes } from './routes';
 import { Routes, RouterModule } from '@angular/router';
 import { FilterPipe } from './filter.pipe'; // CLI imports router
 
+
 @NgModule({
   declarations: [
     AppComponent,

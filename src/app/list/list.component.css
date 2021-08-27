@@ -28,6 +28,13 @@
     height: 200px;
 }
 
-.search-barre {
-    overflow: hidden;
+.recherche {
+    height: 40px;
+    width: 600px;
+    border: 4px solid #117488;
+    padding: 0 1rem;
+    font-size: 24px;
+    font-family: Source Sans Pro, sans-serif;
+    font-weight: 900;
+    color: #292929;
 }
