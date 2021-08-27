@@ -34,7 +34,6 @@ export class ListComponent implements OnInit {
     for (let i = index; i < sum; i++) {
       this.dataservice.getAllImages(i).subscribe((data : any) =>{
         let randomText = loremIpsum();
-        console.log(randomText);
           this.items.push({...data,randomText})
       })
       
@@ -44,7 +43,6 @@ export class ListComponent implements OnInit {
   onScrollDown() {  
     this.start = this.sum;  
     this.sum += 12; 
-    console.log('down');
     this.addItems(this.start,this.sum)
   } 
 
@@ -75,7 +73,6 @@ export class ListComponent implements OnInit {
   }
   @HostListener('scroll', ['$event'])
   onScroll(event: any) {
-    console.log(123);
     
     if (event.target.offsetHeight + event.target.scrollTop >= event.target.scrollHeight) {
       this.onScrollDown()

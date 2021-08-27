@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { DataService } from '../data.service';
+import { loremIpsum } from "lorem-ipsum";
 
 @Component({
   selector: 'app-favoris',
@@ -33,7 +34,8 @@ export class FavorisComponent implements OnInit {
     
         this.items.map(x => 
           this.dataservice.getAllImages(x).subscribe((data : any) =>{
-              this.list.push(data)
+            let randomText = loremIpsum();
+            this.list.push({...data,randomText})
           }));
       }
     
@@ -57,7 +59,7 @@ this.favs=newList;
               this.list.push(data)
           }));
       }
-
+      this.ngOnInit();
 /*
       this.items.forEach((element,index)=>{
         if(element==id) this.items.splice(index,1);
