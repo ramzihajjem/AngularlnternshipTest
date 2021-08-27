@@ -42,7 +42,23 @@ export class FavorisComponent implements OnInit {
   }
 
   removefav(id: any){
+    const newList = this.items.filter((element)=>Number(element)!==Number(id));
+    localStorage.clear();
 
+localStorage.setItem('fav', newList.toString());
+this.favs=newList;
+      if (this.favs){
+
+        this.items = this.favs.split(',').map((x:any) => Number(x))  
+    
+    
+        this.items.map(x => 
+          this.dataservice.getAllImages(x).subscribe((data : any) =>{
+              this.list.push(data)
+          }));
+      }
+
+/*
       this.items.forEach((element,index)=>{
         if(element==id) this.items.splice(index,1);
      });
@@ -67,8 +83,8 @@ export class FavorisComponent implements OnInit {
 
 
      this.loadData();
-     window.location.reload();
-
+     //window.location.reload();
+*/
 
 
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener  } from '@angular/core';
 import { DataService } from '../data.service';
+import { loremIpsum } from "lorem-ipsum";
 
 
 @Component({
@@ -17,6 +18,7 @@ export class ListComponent implements OnInit {
   endReached = false; 
   photos: any;  
   start: number = 0;
+  
   favs: any;
   fav: Array<any> = []
   list: Array<any> = []
@@ -31,7 +33,9 @@ export class ListComponent implements OnInit {
   addItems(index: any, sum: Number) {  
     for (let i = index; i < sum; i++) {
       this.dataservice.getAllImages(i).subscribe((data : any) =>{
-          this.items.push(data)
+        let randomText = loremIpsum();
+        console.log(randomText);
+          this.items.push({...data,randomText})
       })
       
     }
