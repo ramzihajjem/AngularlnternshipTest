@@ -1,6 +1,6 @@
 <input class="recherche" type="text" placeholder="Search" [(ngModel)]="search">
 <div class="search-results">
-    <div class="container" style="overflow: scroll; height: 600px;" (scroll)="onScroll($event)">
+    <div class="container" id="list" (scroll)="onScroll($event)">
 
 
         <mat-grid-list cols="3">

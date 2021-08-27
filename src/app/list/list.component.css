@@ -38,3 +38,8 @@
     font-weight: 900;
     color: #292929;
 }
+
+#list {
+    overflow: auto;
+    height: 600px
+}

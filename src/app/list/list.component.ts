@@ -54,15 +54,13 @@ export class ListComponent implements OnInit {
 
   removefav(id: any){
     const index = this.fav.indexOf(Number(id));
-
     this.fav.splice(index,1)
-    
     localStorage.setItem('fav', this.fav.toString())
   }
 
   ngOnInit(): void {
     if (this.n==0) {
-      this.addItems(0,this.sum)
+      this.addItems(1,this.sum)
     }
     this.favs = localStorage.getItem('fav')
     this.fav = this.favs.split(',').map((x:any) => Number(x)) 

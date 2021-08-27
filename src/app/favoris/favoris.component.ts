@@ -44,51 +44,14 @@ export class FavorisComponent implements OnInit {
   }
 
   removefav(id: any){
-    const newList = this.items.filter((element)=>Number(element)!==Number(id));
-    localStorage.clear();
-
-localStorage.setItem('fav', newList.toString());
-this.favs=newList;
-      if (this.favs){
-
-        this.items = this.favs.split(',').map((x:any) => Number(x))  
+    const index = this.list.findIndex((x:any)=> x.id == Number(id))
+    console.log(index,Number(id));
     
-    
-        this.items.map(x => 
-          this.dataservice.getAllImages(x).subscribe((data : any) =>{
-              this.list.push(data)
-          }));
-      }
-      this.ngOnInit();
-/*
-      this.items.forEach((element,index)=>{
-        if(element==id) this.items.splice(index,1);
-     });
+    this.list.splice(index,1)
 
-     console.log("items length"+this.items.length);
-
-     if (this.items.length == 0){
-      localStorage.clear();
-      console.log("one element remaining"+this.items.length);
-
-
-
-     }else{
-      console.log("more than 1 element"+this.items.length);
-      this.favs = []; 
-      localStorage.setItem('fav', this.items.toString())
-
-
-
-     }
-
-
-
-     this.loadData();
-     //window.location.reload();
-*/
-
-
+    const indexf = this.items.indexOf(Number(id));
+    this.items.splice(indexf,1)
+    localStorage.setItem('fav', this.items.toString())
   }
 
 }
