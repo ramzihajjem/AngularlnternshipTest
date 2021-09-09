@@ -41,5 +41,6 @@
 
 #list {
     overflow: auto;
+    overflow-x: hidden;
     height: 600px
 }
